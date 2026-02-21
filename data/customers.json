@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: OWNER/REPO
+  branch: main
+
+collections:
+  - name: "customers"
+    label: "Customers Dashboard"
+    files:
+      - label: "Customers Data"
+        name: "customers_data"
+        file: "data/customers.json"
+        fields:
+          - label: "Customers"
+            name: "customers"
+            widget: "list"
+            fields:
+              - { label: "Customer", name: "customer", widget: "string" }
+              - { label: "Users Total", name: "users_total", widget: "number" }
+              - { label: "Copilot Licenses", name: "m365_copilot_licenses", widget: "number" }
+              - { label: "Active Users (28d)", name: "m365_copilot_active_users_28d", widget: "number" }
+              - { label: "OOB Agents Used (28d)", name: "agents_out_of_box_used_28d", widget: "number" }
+              - { label: "Custom Agents Count", name: "custom_agents_count", widget: "number" }
+              - label: "Connectors"
+                name: "connectors"
+                widget: "object"
+                fields:
+                  - { label: "Jira", name: "jira", widget: "string" }
+                  - { label: "ServiceNow", name: "servicenow", widget: "string" }
+                  - { label: "Salesforce", name: "salesforce", widget: "string" }
+                  - { label: "Confluence", name: "confluence", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "string", required: false }
